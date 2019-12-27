@@ -1,0 +1,322 @@
+nav {
+    background:#408797;
+    width: 100%;
+    height: 75px;
+}
+
+.title {
+    float: left;
+    font: normal 66px Roboto;
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+nav p {
+    float: left;
+    font: normal 14px Roboto;
+    margin-top: 14px;
+    margin-left: 18px;
+    color: white;
+}
+
+nav ul {
+    float: right;
+    font: normal 15px Roboto;
+    margin-top: 16px;
+    margin-right: 15%;
+}
+
+nav a {
+    display: inline-block;
+    border-radius:8px;
+    width: 150px;
+    height: 45px;
+    color: white;
+    background: #408797;
+    font: normal 18px Roboto;
+    border-width: 2px;
+    border-color: white;
+    float: right;
+    margin: 0 15px;
+}
+
+.name {
+    color: #408797;
+    font: normal 90px Roboto;
+    text-align: center;
+    margin-right: 40px;
+    margin-top: 15px;
+    line-height: 0.99;
+}
+
+.subtit {
+    color: #408797;
+    text-align: center;
+    font: normal 28px Roboto;
+    margin-right: 40px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+p{
+    font: normal 17px Roboto;
+    color: #727272;
+    text-align: justify;
+}
+
+section p{
+    font: normal 19px Monospace;
+    color: #e0e0e0;
+    margin-top: -1px;
+    margin-left: 20px;
+    text-align: justify;
+}
+
+.instalation {
+    color: #69a2ba;
+    font: normal 35px Roboto;
+    letter-spacing: 6px;
+    text-decoration: underline #376a99;
+    margin-top: 30px;
+    margin-left: 150px;
+}
+
+.titles {
+    color: #408797;
+    font: normal 35px Roboto;
+    margin-top: 30px;
+    margin-left: 150px;
+    text-decoration: underline #376a99;
+}
+
+.topic {
+    color: #408797;
+    font: normal 35px Roboto;
+    margin-left: -40px;
+}
+
+.logo {
+    width: 32%;
+    padding: 30px 0px 0px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.logocci {
+    width: 17%;
+    float: left;
+    margin-top: 2px;
+    margin-left: 5px;
+    margin-right: -3px;
+    display: inline-block;
+}
+
+.Github {
+    float: left;
+    font: normal 17px Roboto;
+    margin-top: 13px;
+    margin-left: 33px;
+    color: white;
+}
+
+.Quickstart {
+    float: left;
+    font: normal 17px Roboto;
+    margin-top: 13px;
+    margin-left: 18px;
+    color: white;
+}
+
+.Documentation {
+    float: left;
+    font: normal 17px Roboto;
+    margin-top: 13px;
+    margin-left: 5px;
+    color: white;
+}
+
+/* The browser window */
+.minicontainer {
+    border: 3px solid white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background: #53717a;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 550px;
+    height: 150px;
+    margin-left: 15%;
+}
+
+.minicontainer2 {
+    border: 3px solid white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background: #53717a;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 900px;
+    height: 150px;
+}
+
+.megacontainer {
+    border: 3px solid white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background: #53717a;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 800px;
+    height: 180px;
+}
+
+/* Container for columns and the top "toolbar" */
+.row1 {
+    padding: 10px;
+    background: #21505e;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 35px;
+}
+  
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* Three dots */
+.dot {
+    margin-top: 4px;
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+  
+/* Page content */
+.content {
+    padding: 15px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+}
+
+i1 {
+    font: normal 25px Roboto;
+    color: #4c4f5c;
+    margin-left: 85.8%;
+}
+
+i2 {
+    font: normal 25px Roboto;
+    color: #4c4f5c;
+    margin-left: 87%;
+}
+
+i3 {
+    font: normal 25px Roboto;
+    color: #4c4f5c;
+    margin-left: 81.5%;
+}
+
+i4 {
+    font: normal 25px Roboto;
+    color: #4c4f5c;
+    margin-left: 85.3%;
+}
+
+.page-footer{
+    background-color: #eeeeee;
+    
+}
+
+.footli {
+    color: #727272;
+    font-size: 14px;
+}
+
+.font {
+    font-family: 'Geo', sans-serif;
+}
+
+.butablel {
+    text-align: center;
+    display: inline-block;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    width: 150px;
+    height: 20px;
+    color: white;
+    background: #585858;
+    font: normal 15px Roboto;
+    border-width: 2px;
+    border-color: white;
+}
+
+.butabler {
+    text-align: center;
+    display: inline-block;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    width: 70px;
+    height: 20px;
+    color: white;
+    background: #43bd15;
+    font: normal 15px Roboto;
+    border-width: 2px;
+    border-color: white;
+}
+
+.butl {
+    text-align: center;
+    display: inline-block;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    width: 40px;
+    height: 20px;
+    margin-left: 290px;
+    color: white;
+    background: #585858;
+    font: normal 15px Roboto;
+    border-width: 2px;
+    border-color: white;
+}
+
+.butr {
+    text-align: center;
+    display: inline-block;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    width: 180px;
+    height: 20px;
+    float: center;
+    color: white;
+    background: #0e7fc0;
+    font: normal 15px Roboto;
+    border-width: 2px;
+    border-color: white;
+}
+
+.butl2 {
+    text-align: center;
+    display: inline-block;
+    border-radius:5px;
+    width: 90px;
+    height: 20px;
+    float: center;
+    margin-left: 20px;
+    color: white;
+    background: #43bd15;
+    font: normal 15px Roboto;
+    border-width: 2px;
+    border-color: white;
+}

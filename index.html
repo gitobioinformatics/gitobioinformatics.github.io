@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gito - A Docker image focused on reproducibility</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/path/to/vue.js"></script>
+    <script src="/path/to/vue-router.js"></script>
+</head>
+<body class="font">
+
+    <!--Barra de Navegação-->
+
+    <nav>
+        <div class="nav-wrapper">
+            <h1 class="title">G I T O</h1>
+            <p>A Docker image<br> focused on<br> reproducibility</p>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a onclick="locdoc()"><p class="Github">GitHub</p></a></li>
+                <li><a href="#quickstart"><p class="Quickstart">Quick Start</p></a></li>
+            </ul>
+        </div>
+    </nav>
+            
+
+    <div class="container">
+        <!--Gito Logo-->
+        <div id="logo">
+            <img class="logo" src="Logo.png">
+            <h2 class="name">G I T O</h2>
+            <h2 class="subtit">A Docker image Focused On Reproducibility <br> For Building Lightweight Containers Of Bioinformatics Tools</h2>
+            <a class="butl" href="https://zenodo.org/record/2529383#.XcHgyuhKiUk">DOI</a><a class="butr" href="https://zenodo.org/record/2529383#.XcHgyuhKiUk">10.5281/zenodo.2529383</a><a class="butl2" href="https://circleci.com/gh/gitobioinformatics/gito"><img class="logocci" src="LogoCCI.png">PASSED</a>
+        </div>
+
+        <!--What is Gito?-->
+        <div>
+            <p>
+                Gito is a lightweight and safe <a href="https://www.docker.com/">Docker</a> image based on <a href="https://alpinelinux.org/">Alpine</a> containing bioinformatics tools ready to be used. It's an open<br>
+                source project that provides an easy and modular method for building, distributing and replicating pipelines, those of which<br>
+                hava a base image that forms the foundation layer on which each container is built. The base image is only 4.41 MB in size<br>
+                and contains only the OS libraries and language dependencies required to run the tools, but robust enough to run<br>
+                bioinformatics pipelines with security.
+            </p>
+            <p>
+                Gito was conceived with the "start with the minimum and add dependencies as needed" philosophy in mind, meaning we<br>
+                encourage separate containers for each bioinformatics tool configured with the minimum to run. Gito uses musl libc as the<br>
+                standard C library for Linux-based systems. Musl libc is free, lightweight, security-oriented and smaller in size compared to<br>
+                the Glibc library. The source codes for bioinformatics tools, written in C, C++ and Java, have been compiled for native Alpine<br>
+                executables.
+            </p>
+        </div>
+    </div>
+
+    <!--Instalation-->
+    <div id="quickstart">
+        <h3 class="instalation">Quick Start</h3>
+    </div> 
+    <div class="container">
+        <h4 class="topic">Step 1: Install Docker Image</h4>
+        <p>
+            To download and run this Docker image, you first need to set up Docker on your machine.
+        </p>
+        <p>
+            The easiest way to start with Docker is to install the Docker Desktop (<a hreh="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a>) by<br>
+            simply downloading and clicking the installer which is available for both Mac OSX and Windows. For Linux users, follow the<br>
+            instructions <a href="https://docs.docker.com/install/">here</a>, and to use the CLI without sudo, follow the <a href="https://docs.docker.com/install/linux/linux-postinstall/">post-installation steps</a>.
+        </p>
+        <h4 class="topic">Step 2: Download and Run the Docker Image</h4>
+        <p>
+            The image can be downloaded and executed through the Docker CLI with the following commands:
+        </p>
+        <p>
+            1. Pull (download) the Docker images:
+        </p>
+        <section>
+            <div class="megacontainer">
+                <div class="row1">
+                    <div class="column left">
+                        <span class="dot" style="background:#ED594A;"></span>
+                        <span class="dot" style="background:#FDD800;"></span>
+                        <span class="dot" style="background:#5AC05A;"></span>
+                    </div>    
+                </div>
+                <div class="content">
+                    <p>
+                        $ docker pull gitobioinformatics/fastqc<br>
+                        $ docker pull gitobioinformatics/trimmomatic<br>
+                        $ docker pull gitobioinformatics/trinity<br>
+                        $ docker pull gitobioinformatics/bowtie2
+                    </p>
+                </div>
+            </div>
+        </section>
+        <p>
+            2. Change the working directory to a project and run the following commands:
+        </p>
+        <!--Choices-->
+        <ul class="collapsible popout">
+            <li class="active">
+                <div class="collapsible-header">FastQC<i1 class="large material-icons">arrow_drop_down</i1></div>
+                <div class="collapsible-body"><span>
+                    <div class="minicontainer">
+                        <div class="row1">
+                            <div class="column left">
+                                <span class="dot" style="background:#ED594A;"></span>
+                                <span class="dot" style="background:#FDD800;"></span>
+                                <span class="dot" style="background:#5AC05A;"></span>
+                            </div>    
+                        </div>   
+                        <section>
+                            <div class="content">
+                                <p>
+                                    $ docker run -u $(id -u):$(id -g) -v $PWD:/data<br>
+                                    -w /data --rm gitobioinformatics/fastqc
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </span></div>
+            </li>
+            <li>
+                <div class="collapsible-header">Trinity<i2 class="large material-icons">arrow_drop_down</i2></div>
+                <div class="collapsible-body"><span>
+                    <div class="minicontainer">
+                        <div class="row1">
+                            <div class="column left">
+                                <span class="dot" style="background:#ED594A;"></span>
+                                <span class="dot" style="background:#FDD800;"></span>
+                                <span class="dot" style="background:#5AC05A;"></span>
+                            </div>    
+                        </div>      
+                        <section>
+                            <div class="content">
+                                <p>
+                                    $ docker run -u $(id -u):$(id -g) -v $PWD:/data<br>
+                                    -w /data --rm gitobioinformatics/trinity
+                                </p>
+                            </div>
+                        <section>
+                    </div>
+                </span></div>
+            </li>
+            <li>
+                <div class="collapsible-header" >Trimmomatic<i3 class="large material-icons">arrow_drop_down</i3></div>
+                <div class="collapsible-body"><span>
+                    <div class="minicontainer">
+                        <div class="row1">
+                            <div class="column left">
+                                <span class="dot" style="background:#ED594A;"></span>
+                                <span class="dot" style="background:#FDD800;"></span>
+                                <span class="dot" style="background:#5AC05A;"></span>
+                            </div>    
+                        </div>      
+                        <section>
+                            <div class="content">
+                                <p>
+                                    $ docker run -u $(id -u):$(id -g) -v $PWD:/data<br>
+                                    -w /data --rm gitobioinformatics/trimmomatic
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </span></div>
+            </li>
+            <li>
+                <div class="collapsible-header">Bowtie2<i4 class="large material-icons">arrow_drop_down</i4></div>
+                <div class="collapsible-body"><span>
+                    <div class="minicontainer">
+                        <div class="row1">
+                            <div class="column left">
+                                <span class="dot" style="background:#ED594A;"></span>
+                                <span class="dot" style="background:#FDD800;"></span>
+                                <span class="dot" style="background:#5AC05A;"></span>
+                            </div>    
+                        </div>
+                        <section>
+                            <div class="content">
+                                <p>
+                                    $ docker run -u $(id -u):$(id -g) -v $PWD:/data<br>
+                                        -w /data --rm gitobioinformatics/bowtie2
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </span></div>
+            </li>
+        </ul>
+        <h4 class="topic">Deploy this Docker Image onto your Cloud</h4>
+        <p>
+            You can download and deploy this Docker image with your cloud provider such as DigitalOcean, Amazon Web Services,<br>
+            HP Enterprise, IBM, Microsoft Azure Cloud or others.
+        </p>
+
+        <h4 class="topic">Reproducing a pipeline example</h4>
+        <p>
+            Gito was used to reproduce the pipeline present in the work of <a href="https://www.sciencedirect.com/science/article/pii/S2352340917305322?via%3Dihub">Hernández-Fernández (2017)</a>, which is the first de novo<br>
+            transcriptome assembly of Eretmochelys Imbricate published. Instructions used and execution results can be accessed <a href="https://github.com/gitobioinformatics/gito/tree/master/examples/eretmochelys_imbricata">here</a>.
+        </p>
+    
+        <h4 class="topic">Building from source</h4>
+        <p>
+            To build Gito images from source, you can use the following process:
+        </p>
+        <p>
+            1. Install latest version of <a href="https://docs.docker.com/install/">Docker</a>:
+        </p>
+        <p>
+            For Linux users, you can follow the instructions here to manage Docker as non-root user. Otherwise, execute gitobld<br>
+            script using sudo.
+        </p>
+        <p>
+            2. Get the source code:
+        </p>
+        <div class="minicontainer2">
+            <div class="row1">
+                <div class="column left">
+                    <span class="dot" style="background:#ED594A;"></span>
+                    <span class="dot" style="background:#FDD800;"></span>
+                    <span class="dot" style="background:#5AC05A;"></span>
+                </div>    
+            </div>
+            <section>
+                <div class="content">
+                    <p>
+                        $ git clone https://github.com/gitobioinformatics/gito.git<br>
+                        $ cd gito
+                    </p>
+                </div>
+            </section>
+        </div>
+        <p>
+            3. Create a private and public key to sign the apk packages:
+        </p>
+        <div class="minicontainer2">
+            <div class="row1">
+                <div class="column left">
+                    <span class="dot" style="background:#ED594A;"></span>
+                    <span class="dot" style="background:#FDD800;"></span>
+                    <span class="dot" style="background:#5AC05A;"></span>
+                </div>    
+            </div>
+            <section>
+                <div class="content">
+                    <p>
+                        $ mkdir -p keys<br>
+                        $ openssl genrsa -out keys/packager_key.rsa 2048<br>
+                        $ openssl rsa -in keys/packager_key.rsa -pubout -out keys/packager_key.rsa.pub
+                    </p>
+                </div>
+            </section>
+        </div>
+        <p>
+            4. Run the helper script to build the images:
+        </p>
+        <div class="minicontainer2">
+            <div class="row1">
+                <div class="column left">
+                    <span class="dot" style="background:#ED594A;"></span>
+                    <span class="dot" style="background:#FDD800;"></span>
+                    <span class="dot" style="background:#5AC05A;"></span>
+                </div>    
+            </div>
+            <section>
+                <div class="content">
+                    <p>
+                        $ ./gitobld build -rS all
+                    </p>
+                </div>
+            </section>
+        </div>
+        <p>
+            If you are using sudo to execute, use the following command:
+        </p>
+        <div class="minicontainer2">
+            <div class="row1">
+                <div class="column left">
+                    <span class="dot" style="background:#ED594A;"></span>
+                    <span class="dot" style="background:#FDD800;"></span>
+                    <span class="dot" style="background:#5AC05A;"></span>
+                </div>    
+            </div>
+            <section>
+                <div class="content">
+                    <p>
+                        $ sudo ./gitobld build -U $(id -un) -rS all
+                    </p>
+                </div>
+            </section>
+        </div>
+        <p>
+            You can build individual images by using the tool name instead of all.
+        </p>
+
+        <h4 class="topic">Directory structure</h4>
+
+        <table class="striped">
+            <thead>
+              <tr>
+                  <th>Directory</th>
+                  <th>Description</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr>
+                <td>base</td>
+                <td>Contains Dockerfile used to build Gito base image.</td>
+              </tr>
+              <tr>
+                <td>build</td>
+                <td>Utilities to create Docker images using Gito as base.</td>
+              </tr>
+              <tr>
+                <td>examples</td>
+                <td>Contains examples of bioinformatics pipelines using Gito images.</td>
+              </tr>
+              <tr>
+                <td>images</td>
+                <td>Contains images used by this README.</td>
+              </tr>
+              <tr>
+                <td>library</td>
+                <td>Dockerfiles used to build several tools using Alpine packages from ports directory.</td>
+              </tr>
+              <tr>
+                <td>ports</td>
+                <td>Contains APKBUILD files for bioinformatic tools.</td>
+              </tr>
+            </tbody>
+          </table>
+
+        <h4 class="topic">Security and vulnerabilities</h4>
+        <p>
+            Due to the extremely small size, Gito has a smaller attack surface compared to the containers that are based on larger<br>
+            images. To assess safety, we used Quay Security Scanner to assess vulnerabilities in Gito. Quay identifies insecure packages<br>
+            by matching the metadata against Common Vulnerabilities and Exposures (CVE) database. The results of the analysis were<br>
+            published in the Quay portal, and the scanning of each tool can be accessed below:
+        </p>
+        <table class="striped">
+            <thead>
+              <tr>
+                  <th>Image</th>
+                  <th>Scanning Result</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr>
+                <td>Bowtie2</td>
+                <td><a class="butablel" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Quay Security Scan</a><a class="butabler" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Passed</a></td>
+              </tr>
+              <tr>
+                <td>FastQC</td>
+                <td><a class="butablel" href="https://quay.io/repository/gitobioinformatics/fastqc?tab=tags">Quay Security Scan</a><a class="butabler" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Passed</a></td>
+              </tr>
+              <tr>
+                <td>Jellyfish</td>
+                <td><a class="butablel" href="https://quay.io/repository/gitobioinformatics/jellyfish?tab=tags">Quay Security Scan</a><a class="butabler" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Passed</a></td>
+              </tr>
+              <tr>
+                <td>Prokka</td>
+                <td><a class="butablel" href="https://quay.io/repository/gitobioinformatics/prokka?tab=tags">Quay Security Scan</a><a class="butabler" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Passed</a></td>
+              </tr>
+              <tr>
+                <td>Salmon</td>
+                <td><a class="butablel" href="https://quay.io/repository/gitobioinformatics/salmon?tab=tags">Quay Security Scan</a><a class="butabler" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Passed</a></td>
+              </tr>
+              <tr>
+                <td>Samtools</td>
+                <td><a class="butablel" href="https://quay.io/repository/gitobioinformatics/samtools?tab=tags">Quay Security Scan</a><a class="butabler" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Passed</a></td>
+              </tr>
+              <tr>
+                <td>SPAdes</td>
+                <td><a class="butablel" href="https://quay.io/repository/gitobioinformatics/spades?tab=tags">Quay Security Scan</a><a class="butabler" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Passed</a></td>
+              </tr>
+              <tr>
+                <td>SRA Tools</td>
+                <td><a class="butablel" href="https://quay.io/repository/gitobioinformatics/sra-tools?tab=tags">Quay Security Scan</a><a class="butabler" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Passed</a></td>
+              </tr>
+              <tr>
+                <td>Trimmomatic</td>
+                <td><a class="butablel" href="https://quay.io/repository/gitobioinformatics/trimmomatic?tab=tags">Quay Security Scan</a><a class="butabler" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Passed</a></td>
+              </tr>
+              <tr>
+                <td>Trinity</td>
+                <td><a class="butablel" href="https://quay.io/repository/gitobioinformatics/trinity?tab=tags">Quay Security Scan</a><a class="butabler" href="https://quay.io/repository/gitobioinformatics/bowtie2?tab=tags">Passed</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+        <h4 class="topic">License</h4>
+        <p>
+            MIT License. See <a href="https://github.com/gitobioinformatics/gito/blob/master/LICENSE">LICENSE</a> for more information.
+        </p>
+
+        <h4 class="topic">Contributions</h4>
+        <p>
+            Gito is open-source (see <a href="https://github.com/gitobioinformatics/gito/blob/master/LICENSE">LICENSE</a>), and we welcome contributions from anyone who is interested in contributing. To<br>
+            contribute, please make a pull request. The issue tracker for Gito is also available on GitHub.
+        </p>
+
+        <h4 class="topic">Inspirations</h4>
+        <p>
+            The word "gito" is used by people from the North of Brazil when they refer to something "very small, smaller than normal".<br>
+            The logo of the project was inspired by the tucuxi (Sotalia fluviatilis), which is one of the smallest dolphins of the Delphinidae<br>
+            family and the only one of this family that lives in the rivers. It is a very agile dolphin and although it is an endangered<br>
+            species, it is still possible to find it in Amazonian rivers jumping in the air.
+        </p>
+
+        <h4 class="topic">Funding</h4>
+        <p>
+            This work has been supported by Conselho Nacional de Desenvolvimento Científico e Tecnológico - CNPq (grants<br>
+            149985/2018-5; 129954/2018-7).
+        </p>
+
+    </div>
+
+
+    <!--Footer-->
+    <footer class="page-footer black-text">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="black-text">Gito</h5>
+                  <ul class="footli">
+                    <li>Authors:</li>
+                    <li>Marcos Paulo Alves de Souza</li>
+                    <li>Caio Vinicios Raposo Ribeiro</li>
+                    <li>Lucas Peres Oliveira</li>
+                    <li>Nicholas Andrade do Nascimento</li>
+                    <li>Flávio Silva Siqueira</li>
+                    <li>Rubens Mititaka Kishimoto</li>
+                    <li>Rafael Russo Porchera</li>
+                  </ul>
+                  <ul class="footli">
+                    <li>Contact:</li>
+                    <li>Dr. Marcos Paulo Alves de Souza (Project leader)</li>
+                    <li>Email: msousa@museu-goeldi.br</li>
+                    <li>Laboratório de Biologia Molecular</li>
+                    <li>Museu Paraense Emílio Goeldi</li>
+                  </ul>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="">Institutions</h5>
+
+                  <ul>
+                    <li><a class="" href="https://www.museu-goeldi.br/assuntos/o-museu/campus-de-pesquisa">Museu Paraense Emílio Goeldi</a></li>
+                    <li><a class="" href="https://www.cesupa.br/">Centro Universitário do Estado do Pará</a></li>
+                    <li><a class="" href="http://www.mctic.gov.br/portal">Ministério da Ciência, Tecnologia, Inovação e Comunicação</a></li>
+                    <li><a class="" href="https://portal.ufpa.br">Universidade Federal do Pará</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container grey-text">
+              © 2014 Copyright Text
+              </div>
+            </div>
+          </footer>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
